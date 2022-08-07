@@ -241,3 +241,7 @@ tell you "two prime numbers divide that number, which ones?" you basically have
 no better option but to go through the primes and try to divide 783451 by each
 one of them. That'll take you a very long time, believe me. And in the world of
 computers we don't use prime numbers that are three digits long; think 512 bits.
+Now, that's one example of a way to generate numbers that are inherently linked
+to each other, but for which it's very difficult to figure out the link if you
+only have the result. We can do a similar process using elliptic curves by
+repeatedly adding one point to itself; this is called integer multiplication.

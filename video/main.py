@@ -297,3 +297,42 @@ class Addition(Scene):
 
 
         self.wait(1)
+
+def is_prime(n):
+  for i in range(2,n):
+    if (n%i) == 0:
+      return False
+  return True
+
+class PublicKeyCryptography(Scene):
+    def construct(self):
+        text_673 = Tex("673").scale(2).move_to(LEFT)
+        text_977 = Tex("977").scale(2).move_to(RIGHT)
+
+        self.play(Write(text_673), Write(text_977))
+        self.wait(2)
+
+        text_res = Tex(str(673*977)).scale(2)
+        self.play(FadeOut(text_673), FadeOut(text_977), FadeIn(text_res))
+        self.wait(2)
+        self.play(FadeOut(text_res))
+
+
+        text_question = Text("Two prime numbers divide 783451. Which ones?").scale(2).move_to(UP)
+        self.play(Write(text_question))
+
+        text_num = Tex("657521 / \;").scale(2).move_to(DOWN + LEFT * 2)
+        self.add(text_num)
+
+        for i in filter(is_prime, range(2, 976)):
+            #if is_prime(i):
+            time = 7/(i+60)
+            test_num_text = Tex(f"{i}").scale(2).next_to(text_num, RIGHT, buff = 1)
+            self.add(test_num_text)
+            division_text = Tex(f" = {round(657521 / i, 7)}...").scale(2).next_to(test_num_text, RIGHT, buff = 1)
+            if (time > 0.1):
+                self.play(FadeIn(division_text, shift = RIGHT),run_time = time)
+            else:
+                self.add(division_text)
+            self.wait(time)
+            self.remove(division_text, test_num_text)
