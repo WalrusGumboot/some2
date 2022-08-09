@@ -59,9 +59,13 @@ the x-axis is the wrong way around. Thankfully your English teacher printed the
 sonnets on very cheap paper, so you can kind of see what it would look like when
 you flip your paper around. Luckily we have the technology to display it in
 crisp Full HD quality. But your hunger for knowledge hasn't been satiated; after
-all, this looks just the same as the graph from earlier. 
+all, this looks just the same as the graph from earlier.  
 And so, you start experimenting with other relations between those two variables
 x and y. One thing you might try is using higher powers than just one and two.
+A specific combination you might try is y² = x³ + a² + b, where a and b are just
+random numbers. This, in essence, is the formula behind elliptic curves.
+I'll go ahead and animate these properties, so you can get a sense of what they
+tend to look like.
 
 ## part 2: how can we shape new maths? (the group law)
 
@@ -117,6 +121,7 @@ a *group*. Those properties are:
  * **Inverse element**: for every element, we should be able to perform some
                         procedure to get out a new element which, when combined
                         with the original element returns the identity element.
+
 Whew. That was the abstracts maths. A textbook example of a group is the whole
 numbers equipped with addition. We can verify that (Z, +) as it's notated
 satisfies these properties: we know that (a + b) + c = a + (b + c), so
